@@ -14,9 +14,9 @@ from output.output import CSV
 import datetime
 import time
 import os
-from python_dotenv import load_dotenv
+from dotenv import main
 
-load_dotenv()
+main.load_dotenv()
 FREQ = float(os.environ.get("FREQ"))
 
 def getAllSensors():

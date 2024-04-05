@@ -4,9 +4,9 @@ date:   04/04/2024
 '''
 from input.sensor import Sensor
 import os
-from python_dotenv import load_dotenv
+from dotenv import main
 
-load_dotenv()
+main.load_dotenv()
 PIN = int(os.environ.get("PIN_VIBRATION"))
 
 class Vibration (Sensor):
