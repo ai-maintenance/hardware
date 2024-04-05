@@ -38,8 +38,8 @@ class CSV :
     CTREATE NEW FILE
     '''
     def createFile(self):
-        csv_file = open(f'{self.folder_path}/{self.file_id}.csv', 'w', newline='')  # crete and open for write a new recording file
-        rec_file = csv.writer(csv_file, delimiter=',',
+        self.csv_file = open(f'{self.folder_path}/{self.file_id}.csv', 'w', newline='')  # crete and open for write a new recording file
+        rec_file = csv.writer(self.csv_file, delimiter=',',
                             quotechar=',', quoting=csv.QUOTE_MINIMAL)
         
         rec_file.writerow(self.header)  # write the header of csv file
@@ -59,7 +59,7 @@ class CSV :
 
         # write a line of record and add the serial id
         self.rec_file.writerow([self.rec_id] + row + [LABEL]) 
-        self.log([self.rec_id] + row)
+        self.log([self.rec_id] + row + [LABEL])
 
         self.rec_id += 1
 
@@ -73,7 +73,7 @@ class CSV :
         print() # new line
 
     def __del__(self):
-        self.rec_file.close()
+        self.csv_file.close()
 
 
 '''
