@@ -14,7 +14,7 @@ class Gas (Sensor):
         super().__init__("ANALOG", PIN)
 
     def getName(self):
-        return __name__
+        return __class__.__name__
     
     def getValue(self):
         return self.measureAnalog()

@@ -14,7 +14,7 @@ class Vibration (Sensor):
         super().__init__("DIGITAL", PIN)
 
     def getName(self):
-        return __name__
+        return __class__.__name__
     
     def getValue(self):
        return self.measureDigial()
