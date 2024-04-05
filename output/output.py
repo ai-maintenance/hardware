@@ -5,9 +5,8 @@ date:   04/04/2024
 import os
 import csv
 
-PARENT_DIR = os.environ["PARENT_DIR"]
-LIMIT = os.environ["LIMIT"]
-
+PARENT_DIR = os.environ.get("PARENT_DIR")
+LIMIT = os.environ.get("LIMIT")
 '''
 CSV OUTPUT 
 '''
