@@ -2,7 +2,7 @@
 author: GAL ASHKENAZI
 date:   04/04/2024
 '''
-import grove.adc import ADC
+from grove.adc import ADC
 import RPi.GPIO as GPIO
 import board
 import busio
