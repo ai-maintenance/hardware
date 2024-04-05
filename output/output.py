@@ -4,7 +4,7 @@ date:   04/04/2024
 '''
 import csv
 import os
-from dotenv import load_dotenv
+from python_dotenv import load_dotenv
 
 load_dotenv()
 PARENT_DIR = os.environ.get("PARENT_DIR")
@@ -15,7 +15,6 @@ CSV OUTPUT
 '''
 class CSV :
     def __init__(self, directory_name, header):
-        print(f'@@@@@@@@@@@@@@@@@@ {LIMIT} @@@@@@@@@@@@@@@')
         self.header = ['id'] + header           # add 'id' column for header of csv file
         self.directory_name = directory_name    # folder name
         

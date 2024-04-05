@@ -17,7 +17,7 @@ class Sensor:
 
         elif(type == 'DIGITAL'):
             GPIO.setmode(GPIO.BCM)
-            GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DWON)
+            GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
         elif(type == 'I2C'):
             i2c = busio.I2C(board.SCL, board.SDA)

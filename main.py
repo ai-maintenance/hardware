@@ -14,7 +14,7 @@ from output.output import CSV
 import datetime
 import time
 import os
-from dotenv import load_dotenv
+from python_dotenv import load_dotenv
 
 load_dotenv()
 FREQ = float(os.environ.get("FREQ"))
