@@ -4,12 +4,14 @@ date:   04/04/2024
 '''
 from input.sensor import Sensor
 import os
+from dotenv import load_dotenv
 
-PIN = os.environ.get("PIN_LOUDNESS")
+load_dotenv()
+PIN = int(os.environ.get("PIN_LOUDNESS"))
 
 class Loudness (Sensor):
     def __init__(self):
-        super("ANALOG", PIN)
+        super().__init__("ANALOG", PIN)
 
     def getName(self):
         return __name__

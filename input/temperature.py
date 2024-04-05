@@ -6,7 +6,7 @@ from input.sensor import Sensor
 
 class Temperature (Sensor):
     def __init__(self):
-        super("I2C", -1)
+        super().__init__(type="I2C", pin=-1)
 
     def getName(self):
         return __name__

@@ -14,8 +14,10 @@ from output.output import CSV
 import datetime
 import time
 import os
+from dotenv import load_dotenv
 
-FREQ = os.environ.get("FREQ")
+load_dotenv()
+FREQ = float(os.environ.get("FREQ"))
 
 def getAllSensors():
     sensors = []
