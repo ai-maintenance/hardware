@@ -18,6 +18,7 @@ from dotenv import main
 
 main.load_dotenv()
 FREQ = float(os.environ.get("FREQ"))
+PIN_SIGNAL = int(os.environ.get("PIN_SIGNAL"))
 
 def getAllSensors():
     sensors = []
@@ -39,10 +40,12 @@ def getAllSensorsValue(sensors):
      return [s.getValue() for s in sensors] 
 
 if __name__ == '__main__':
+    Sensor("SIGNAL", PIN_SIGNAL)    # LED on for record signal
+
     sensors = getAllSensors()   # get all sensors exist
 
     directory_name = datetime.datetime.now().strftime("record %d_%m_%Y %H_%M_%S")       # call the folder by date and time (recod DAY_MONTH_YEAR HOUR_MINUTH_SECOND)
-    output = CSV(directory_name= directory_name, header=getAllSensorsName(sensors))
+    output = CSV(directory_name=directory_name, header=getAllSensorsName(sensors))
 
     # run forever
     while(True):
