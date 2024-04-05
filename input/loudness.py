@@ -10,7 +10,6 @@ PIN = os.environ["PIN_LOUDNESS"]
 class Loudness (Sensor):
     def __init__(self):
         super("ANALOG", PIN)
-        pass
 
     def getName(self):
         return __name__

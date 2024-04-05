@@ -9,7 +9,7 @@ PIN = os.environ["PIN_VIBRATION"]
 
 class Vibration (Sensor):
     def __init__(self):
-        super("DIGITAL")
+        super("DIGITAL", PIN)
 
     def getName(self):
         return __name__

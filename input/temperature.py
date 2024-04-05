@@ -2,7 +2,7 @@
 author: GAL ASHKENAZI
 date:   04/04/2024
 '''
-from sensor import Sensor
+from input.sensor import Sensor
 
 class Temperature (Sensor):
     def __init__(self):
