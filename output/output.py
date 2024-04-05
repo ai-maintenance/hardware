@@ -4,9 +4,9 @@ date:   04/04/2024
 '''
 import csv
 import os
-from python_dotenv import load_dotenv
+from dotenv import main
 
-load_dotenv()
+main.load_dotenv()
 PARENT_DIR = os.environ.get("PARENT_DIR")
 LIMIT =  int(os.environ.get("LIMIT"))
 
