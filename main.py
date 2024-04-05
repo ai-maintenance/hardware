@@ -15,7 +15,7 @@ import datetime
 import time
 import os
 
-FREQ = os.environ["FREQ"]
+FREQ = os.environ.get("FREQ")
 
 def getAllSensors():
     sensors = []

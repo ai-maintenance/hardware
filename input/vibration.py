@@ -5,7 +5,7 @@ date:   04/04/2024
 from input.sensor import Sensor
 import os
 
-PIN = os.environ["PIN_VIBRATION"]
+PIN = os.environ.get("PIN_VIBRATION")
 
 class Vibration (Sensor):
     def __init__(self):
