@@ -40,7 +40,7 @@ def getAllSensorsValue(sensors):
      return [s.getValue() for s in sensors] 
 
 if __name__ == '__main__':
-    Sensor("SIGNAL", PIN_SIGNAL)    # LED on for record signal
+    s = Sensor("SIGNAL", PIN_SIGNAL)    # LED on for record signal
 
     sensors = getAllSensors()   # get all sensors exist
 
