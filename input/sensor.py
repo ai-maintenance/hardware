@@ -45,3 +45,4 @@ class Sensor:
     def __del__(self):
         if(self.destructor == True):
             GPIO.output(self.pin, GPIO.HIGH)
+            print("STOP RECORDING")
