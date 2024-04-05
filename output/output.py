@@ -9,14 +9,15 @@ from dotenv import main
 main.load_dotenv()
 PARENT_DIR = os.environ.get("PARENT_DIR")
 LIMIT =  int(os.environ.get("LIMIT"))
+LABEL = os.environ.get("LABEL")
 
 '''
 CSV OUTPUT 
 '''
 class CSV :
     def __init__(self, directory_name, header):
-        self.header = ['id'] + header           # add 'id' column for header of csv file
-        self.directory_name = directory_name    # folder name
+        self.header = ['id'] + header + ['label']   # add 'id' column for header of csv file
+        self.directory_name = directory_name        # folder name
         
         self.file_id = 0    # serial file id
         self.rec_id = 0     # serial recode id
@@ -57,7 +58,7 @@ class CSV :
             self.rec_file = self.createFile()
 
         # write a line of record and add the serial id
-        self.rec_file.writerow([self.rec_id] + row) 
+        self.rec_file.writerow([self.rec_id] + row + [LABEL]) 
         self.log([self.rec_id] + row)
 
         self.rec_id += 1
@@ -70,6 +71,9 @@ class CSV :
             print(res, end='\t')
 
         print() # new line
+
+    def __del__(self):
+        self.rec_file.close()
 
 
 '''
